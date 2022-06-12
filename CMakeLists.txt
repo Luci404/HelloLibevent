@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(HelloLibevent)
+
+file(GLOB_RECURSE HELLOLIBEVENT_DEMO_HEADERS "${CMAKE_SOURCE_DIR}/src/*.h")
+file(GLOB_RECURSE HELLOLIBEVENT_DEMO_SOURCES "${CMAKE_SOURCE_DIR}/src/*.cpp")
+file(GLOB_RECURSE HELLOLIBEVENT_DEMO_MODULES "${CMAKE_SOURCE_DIR}/src/*.ixx")
+add_executable(HelloLibevent "${HELLOLIBEVENT_DEMO_HEADERS}" "${HELLOLIBEVENT_DEMO_SOURCES}" "${HELLOLIBEVENT_DEMO_MODULES}")
+
+target_include_directories(HelloLibevent PUBLIC "${CMAKE_SOURCE_DIR}/src")
